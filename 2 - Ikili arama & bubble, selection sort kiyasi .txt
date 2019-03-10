@@ -1,0 +1,133 @@
+programlama 2.hafta 1.ders pazartesi
+ array, 		list, 		stack, 		queue, 		tree
+ (size)
+ 
+bu usttekilerin hepsi, bellekte sirali yer kapliyor. Sadece dizi(array)de onceden uzunluk belirlemesi yapmamiz gerekiyor.
+Liste arrayin dinamik artan, azalan hali.
+ 
+python, C, C++, Java, c#, sql, php, js
+ 
+bu dilleri bir siniflandirma bicimimize gore:
+1) strong type: degisken tipleri onceden belirlenecek
+2) non strong type: pythonda oldugu gibi degiskenlerin turu ile bizim ugrasmadigimiz sinif, arkada otomatik degisiyor.
+
+bubblesortun kiyaslamalari yap ama yer degistirmeyi sonraya at algoritmasi ile calisan dizme algoritmasinin adi: selection sort.
+bu sayede swap eylemi sayisini azaltiyoruz.
+selection sortta soldan saga dogru max sayinin hangisinin oldugunu kontrol ediyor.
+o buldugu sayiyi sona atiyor(ekliyor?)
+
+bugun sort icin selection sort:
+search, arama yontemleri icin 2 yontemden daha etkilisi olan binary search yontemini kullanacagiz, digeri de sirayla yani linear search yontemi.
+tabi binary search yontemi sirali dizilerde gecerli.
+
+(2^(k+1)) -1 = n => k=log(n)
+ikili arama agacinda: 2^0 + 2^1 + 2^(derinlik) = 2^(k+1) -1 [esitligin sol tarafi yaprsak sayisi]
+
+repl.ite gectik. (gelecekteki faruk repl.itteki linkleri )
+
+#introduction to computer science MIT OPEN COURSE icerigini takip et.
+#hoca derse gelenlere, soru soranlara, githuba kodlarini koyanlara ekstra puan vericekmis
+
+#jupyter girdileri
+#girdi 1
+def mySearchSelection(my_array):
+	for i in range (len(my_array)-1,0,-1):
+		print(i,end=" ")
+
+	return
+mySearchSelection(my_arr)
+#cikti 1
+9 8 7 6 5 4 3 2 1
+
+#girdi 1A (1in varyasyonu, 1i degistirdik, tekrar cikti aldik)
+def mySearchSelection(my_array):
+	for i in range (len(my_array)-1,0,-1):
+		positionOfMax=0
+		for location in range(1,i+1):
+			print("location: ", location, "i: ",i,end="\n")
+		
+
+	return
+mySearchSelection(my_arr)
+#cikti 1A
+#UZUN
+
+
+
+#girdi 1B
+def mySearchSelection(my_array):
+	for i in range (len(my_array)-1,0,-1):
+		positionOfMax=0
+		for location in range(1,i+1): #burda 1den baslama sebebi 0da zaten max olusu. #bu kodda, sondan baslayip basa dogru ilerliyoruz, buyugu aklimizda tutuyorz
+			#print("location: ", location, "i: ",i,end="\n")
+			if(my_array[location>my_array[positionOfMax]]):
+				positionOfMax=location
+			temp = my_array[location]
+			my_array[location]=my_array[positionOfMax]
+			my_array[positionOfMax]=temp
+			
+
+
+	return
+mySearchSelection(my_arr)
+#cikti 1B
+UZUN
+
+
+
+
+#girdi1C
+def mySearchSelection(my_array):
+	swap_sayisi=0
+	for i in range (len(my_array)-1,0,-1):
+		positionOfMax=0
+		for location in range(1,i+1): #burda 1den baslama sebebi 0da zaten max olusu. #bu kodda, sondan baslayip basa dogru ilerliyoruz, buyugu aklimizda tutuyorz
+			#print("location: ", location, "i: ",i,end="\n")
+			if(my_array[location>my_array[positionOfMax]]):
+				positionOfMax=location
+			temp = my_array[location]
+			my_array[location]=my_array[positionOfMax]
+			my_array[positionOfMax]=temp
+			swap_sayisi=swap_sayisi+1
+		print("swap_sayisi", swap_sayisi)	
+
+
+	return
+mySearchSelection(my_arr)
+#cikti1C
+
+
+
+#girdi2
+my_arr=[21,12,13,44,25,2,7,16,14,35]
+mySearchSelection(my_arr)
+my_arr
+
+#cikti2 
+21,12,13,44,25
+
+#girdi 3
+def my_binary_search(my_sorted_array, item):
+	first=0
+	last=len(my_sorted_array)-1
+	found=False
+	stepCount=1 #en az bir adimda bulacak
+	while first<=last and not found:
+		midpoint=((first+last)//2) 
+		print("first - last: ",first,last)
+		if(my_sorted_array[midpoint]==item):
+			found=True
+		else:
+			stepCount+=1#bunu stepCountu 0 yapip, ustteki ifin ustune koyabiliriz.
+			if(item<my_sorted_array[midpoint]):
+				last=midpoint - 1
+			else:
+				first=midpoint + 1
+	return found,midpoint,s #QSTN: birden fazla degisken return edebiliyormuyduk?			
+#cikti 3
+
+#girdi 4
+my_arr #dizi suanda sirali
+my_binary_search(my_arr,50)
+#cikti4
+#kiyasliyor firstle lastlar esit 9 oldugu zaman bulamadigini yaziyor.
