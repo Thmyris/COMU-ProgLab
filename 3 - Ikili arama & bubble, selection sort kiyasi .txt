@@ -53,7 +53,6 @@ mySearchSelection(my_arr)
 #UZUN
 
 
-
 #girdi 1B
 def mySearchSelection(my_array):
 	for i in range (len(my_array)-1,0,-1):
