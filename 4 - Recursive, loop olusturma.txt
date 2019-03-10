@@ -1,0 +1,149 @@
+############################################FIBONACCI SERISI
+#yol 1
+#burdaki dongu her zaman n-1 defa donucektir.
+def fibonacci_loop(n):
+	a,b=0,1
+	for i in range (n-1):
+		a,b=b,a+b
+	return a
+
+#yol 2
+#burda ise ayni fonksiyonu tekrar tekrar cagiriyoruz.
+#sagdakinin performansi cok kotu ama rahat anlasilabilir bir kod
+
+def fibonacci_recursive(n):
+	if (n<2):
+		return n
+	else:
+		return fibonacci_recursive(n-2)+fibonacci_recursive(n-2)
+
+##########################################################FAKTORIYEL
+
+#yol 1 
+s=1
+for i in range(1,n+1):
+	s=s*i
+return s
+
+#yol 2 
+def factorial_recursive(n):
+	if (n==1):
+		return n
+	else:
+		return n*factorial_recursive(n-2)
+
+##########################################################us alma
+
+#yol 1
+def power(m,n) #m^n i bulacak
+	s=m
+	for i in range(1,n+1):
+		s=s*m
+	return s
+
+#yol 2
+def power_recursive(m,n):
+	if (n==0)
+		return 1
+	elif (n==1)
+		return m
+	elif (n/2==0)
+		return power_recursive (m*m, n/2)
+	elif(n//2 != 0):
+		return power_recursive (m*m, n/2) *m
+
+#########################################################
+#JUPYTER NOTEBOOKA GECTIK
+
+#girdi1
+def fibo_loop(n):
+	a,b=0,1
+	for i in range(n-1):
+		a,b=b,a+b
+	return b
+#cikti1
+#girdi3
+def fibo_recursive(n):
+	if(n<2):
+		return n
+	else:
+		return fibo_recursive(n-1)+fibo_recursive(n-2)
+#cikti3
+#girdi4
+#cikti4
+
+#girdi5
+for i in range(20):
+	print("fibo loop: ", fibo_loop(i), end=" ")
+	print("fibo recursive ", fibo_recursive(i))
+#cikti5
+#yazdiriyor hepsini
+
+
+
+##SONUC: recursive de 100u bulmak imkansiz gunumuz bilgisayarlarinda dedi sanirim hoca, evde deneyeyim heheh
+
+
+#girdi6
+def factorial(n):
+	s=1
+	for i in range(1,n):
+		s=s*i
+	return s
+factorial(5)
+
+#girdi7
+def factorial_recursive(n):
+	if(n==1):
+		return 1
+    else:
+		return n * factorial_recursive(n-1)
+factorial_recursive(5)
+
+#girdi8
+for i in range(10,20): #0:loop becomes infinite
+	r1,r2=factorial(i),factorial_recursive(i)
+	print("factorial loop: ",r1,end=" ")
+	print("factorial recursive: ", r2)
+
+#girdi9
+factorial_recursive(100)
+
+################################################################POWER
+
+#girdi10
+def power_recursive(m,n):
+	global recursive_islem_sayac
+	recursive_islem_sayac +=1
+	if(n==0):
+		return 1
+	elif(n==1):
+		return m
+	elif(n%2 == 0):
+		return power_recursive(m*m, int(n%2))
+	elif(n%2 != 0):
+		return power_recursive(m*m, int(n%2))*m
+power_recursive(2,2)
+
+
+#girdi11
+def power_loop(m,n):
+	global loop_islem_sayac
+	loop_islem_sayac+=1
+	s=1
+	for i in range(n):
+		s=s*m
+	return s
+power_loop(2,8)
+
+
+#girdi12
+m=4
+for i in range(2,10):
+	r1,r2=power_loop(m,i),power_recursive(m,i)
+	print("power loop: ",r1,end=" ")
+	print("power recursive: ",r2)
+
+#recursive yaptigimizda burda daha iyi performans aliyoruz.
+
+#SONUC recursive veya looplu yapmanin probleme gore cozumu olmali, bir cozum digerinden kesinlikle daha iyidir diyemeyiz.
