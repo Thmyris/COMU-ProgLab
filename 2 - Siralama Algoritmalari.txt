@@ -6,10 +6,10 @@ quick
 heapsort
 merge
 
-boyutu n olan tek boyutlu dizi üretin. 
-bu diziyi bubble sort ve selection sort ile sıralayınız.
-dizi üzerinde arama işlemi yapan fonk. yazın.
-sıralanmış dizi üzerinde ... sıralaması yapan fonk. yazın.
+boyutu n olan tek boyutlu dizi Ã¼retin. 
+bu diziyi bubble sort ve selection sort ile sÃ½ralayÃ½nÃ½z.
+dizi Ã¼zerinde arama iÃ¾lemi yapan fonk. yazÃ½n.
+sÃ½ralanmÃ½Ã¾ dizi Ã¼zerinde ... sÃ½ralamasÃ½ yapan fonk. yazÃ½n.
 
 import random
 
