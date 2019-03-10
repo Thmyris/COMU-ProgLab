@@ -1,0 +1,74 @@
+SORT
+bubble
+selection	indisleri karsilastirir
+insertion
+quick
+heapsort
+merge
+
+boyutu n olan tek boyutlu dizi üretin. 
+bu diziyi bubble sort ve selection sort ile sıralayınız.
+dizi üzerinde arama işlemi yapan fonk. yazın.
+sıralanmış dizi üzerinde ... sıralaması yapan fonk. yazın.
+
+import random
+
+a=random.randint(0,100)
+a
+
+-------
+
+def generate_an_array(n):
+    #n-10
+    my_array=[]
+    for i in range(n):
+        s=random.randint(0,100)
+        my_array.append(s)
+    return my_array
+my_arr_l=generate_an_array(10)
+my_arr_l
+
+------
+
+for i in range(len(my_arr_l)):
+    print(i,":",my_arr_l[i], end="\n")
+
+------
+
+for item in my_arr_l:
+    print(item, end=" ")
+
+--------
+
+for i in range(len(my_arr_l)-1,0,-1):
+    for j in range(i):
+        if(my_arr_l[j]>my_arr_l[j+1]):
+            
+            t=my_arr_l[j]
+            my_arr_l[j]=my_arr_l[j+1]
+            my_arr_l[j+1]=t
+my_arr_l
+
+-------
+
+def my_bubble_sort(my_array):
+    for i in range(len(my_arr_l)-1,0,-1):
+        for j in range(i):
+            if(my_arr_l[j]>my_arr_l[j+1]):
+
+                t=my_arr_l[j]
+                my_arr_l[j]=my_arr_l[j+1]
+                my_arr_l[j+1]=t
+my_arr_l
+
+-------
+
+
+def my_search_1(array_2,item):
+    found=False
+    indis=-1
+    for i in range(len(array_2)):
+        if array_2[i]==item:
+            found=True
+            indis=1
+    return (found,indis)
